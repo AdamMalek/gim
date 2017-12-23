@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
         //    visited = true,
         //    walls = new[] { true, true, false, false }
         //};
+
+		var mazeRoot = new GameObject ("Maze");
         foreach (var cell in board)
         {
             var pos = new Vector3(2 * cell.x, 0, 2 * cell.y);
@@ -59,7 +61,8 @@ public class GameManager : MonoBehaviour
                     obj = threeWalls;
                     break;
             }
-            var inst = Instantiate(obj, pos, Quaternion.identity);
+			obj.name = "block[" + cell.x + ", " + cell.y + "]";
+			var inst = Instantiate(obj, pos, Quaternion.identity,mazeRoot.transform);
             inst.transform.Rotate(rot);
             //inst.transform.Rotate(new Vector3(0,180,0));
         }
