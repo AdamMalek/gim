@@ -13,7 +13,7 @@ class MazeGenerator
         _stack = new Stack<Cell>();
         for (var i = 0; i < cols; i++)
         {
-            for (var j = 0; j < cols; j++)
+            for (var j = 0; j < rows; j++)
             {
                 _board[i, j] = new Cell(i, j);
             }

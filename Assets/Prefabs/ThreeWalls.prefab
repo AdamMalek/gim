@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 65955387160861948}
   - component: {fileID: 65995097495271556}
   - component: {fileID: 65468882577126034}
+  - component: {fileID: 114576768489376822}
   m_Layer: 0
   m_Name: ThreeWalls
   m_TagString: Untagged
@@ -96,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.000001, y: 0.2, z: 2.000001}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2, y: 0.1, z: 2}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!65 &65468882577126034
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -108,8 +109,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 0.2}
-  m_Center: {x: 0, y: 1, z: 1}
+  m_Size: {x: 2, y: 2, z: 0.1}
+  m_Center: {x: 0, y: 1, z: 0.95}
 --- !u!65 &65955387160861948
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -120,8 +121,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 2, z: 2}
-  m_Center: {x: 1, y: 1, z: 0}
+  m_Size: {x: 0.1, y: 2, z: 2}
+  m_Center: {x: 0.95, y: 1, z: 0}
 --- !u!65 &65995097495271556
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -132,5 +133,17 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 2, z: 2}
-  m_Center: {x: -1, y: 1, z: 0}
+  m_Size: {x: 0.1, y: 2, z: 2}
+  m_Center: {x: -0.95, y: 1, z: 0}
+--- !u!114 &114576768489376822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1694936558158756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f3a1fab1fe1dd459ae7942082b4baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Visible: 1
