@@ -56,6 +56,6 @@ MonoBehaviour:
   twoWalls: {fileID: 1394953032699978, guid: 0fe6b6c336c7fdc4c917ddee5f8091e9, type: 2}
   corner: {fileID: 1024449324120078, guid: 3709497cfa7004a488ceaad4de6e5575, type: 2}
   threeWalls: {fileID: 1694936558158756, guid: 5bd5b1387f21b7145b4654bb4eeef551, type: 2}
-  Width: 2
-  Height: 5
-  Levels: 2
+  Width: 10
+  Height: 10
+  Levels: 1
