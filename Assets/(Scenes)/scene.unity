@@ -166,10 +166,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 60
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -191,14 +191,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 89285968}
-
-  m_LocalRotation: {x: 0.3647056, y: -0.11591566, z: 0.27984518, w: 0.88047725}
+  m_LocalRotation: {x: 0.4307386, y: -0.19351508, z: 0.21206473, w: 0.8555961}
   m_LocalPosition: {x: 1, y: 11.61, z: -14.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 35.264}
+  m_LocalEulerAnglesHint: {x: 55, y: -15, z: 20}
 --- !u!114 &89285974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1654514584}
-  CameraDistance: 20
 --- !u!1 &128066985
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +250,6 @@ GameObject:
   - component: {fileID: 223921496}
   - component: {fileID: 223921499}
   - component: {fileID: 223921498}
-  - component: {fileID: 223921497}
   m_Layer: 0
   m_Name: Vertex
   m_TagString: Untagged
@@ -273,17 +270,6 @@ Transform:
   m_Father: {fileID: 1654514584}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &223921497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 223921495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8814908e163bde478781cb687fdd972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &223921498
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -333,7 +319,6 @@ GameObject:
   - component: {fileID: 440781527}
   - component: {fileID: 440781531}
   - component: {fileID: 440781530}
-  - component: {fileID: 440781529}
   m_Layer: 0
   m_Name: Vertex
   m_TagString: Untagged
@@ -354,17 +339,6 @@ Transform:
   m_Father: {fileID: 1654514584}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &440781529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 440781526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8814908e163bde478781cb687fdd972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &440781530
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -414,7 +388,6 @@ GameObject:
   - component: {fileID: 720961284}
   - component: {fileID: 720961287}
   - component: {fileID: 720961286}
-  - component: {fileID: 720961285}
   m_Layer: 0
   m_Name: Vertex
   m_TagString: Untagged
@@ -435,17 +408,6 @@ Transform:
   m_Father: {fileID: 1654514584}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &720961285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 720961283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8814908e163bde478781cb687fdd972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &720961286
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -495,7 +457,6 @@ GameObject:
   - component: {fileID: 920772066}
   - component: {fileID: 920772069}
   - component: {fileID: 920772068}
-  - component: {fileID: 920772067}
   m_Layer: 0
   m_Name: Vertex
   m_TagString: Untagged
@@ -516,17 +477,6 @@ Transform:
   m_Father: {fileID: 1654514584}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &920772067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 920772065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8814908e163bde478781cb687fdd972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &920772068
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -576,7 +526,6 @@ GameObject:
   - component: {fileID: 964672469}
   - component: {fileID: 964672472}
   - component: {fileID: 964672471}
-  - component: {fileID: 964672470}
   m_Layer: 0
   m_Name: Vertex
   m_TagString: Untagged
@@ -597,17 +546,6 @@ Transform:
   m_Father: {fileID: 1654514584}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &964672470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 964672468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8814908e163bde478781cb687fdd972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &964672471
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -780,7 +718,6 @@ GameObject:
   - component: {fileID: 1645555080}
   - component: {fileID: 1645555083}
   - component: {fileID: 1645555082}
-  - component: {fileID: 1645555081}
   m_Layer: 0
   m_Name: Vertex
   m_TagString: Untagged
@@ -801,17 +738,6 @@ Transform:
   m_Father: {fileID: 1654514584}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1645555081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1645555079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8814908e163bde478781cb687fdd972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1645555082
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -928,7 +854,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1654514580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.78, y: 4.21, z: -75.02}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 720961284}
@@ -953,6 +879,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8814908e163bde478781cb687fdd972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Vertices:
+  - {fileID: 720961284}
+  - {fileID: 920772066}
+  - {fileID: 223921496}
+  - {fileID: 964672469}
+  - {fileID: 1926093088}
+  - {fileID: 1859828503}
+  - {fileID: 440781527}
+  - {fileID: 1645555080}
 --- !u!1 &1859828502
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +898,6 @@ GameObject:
   - component: {fileID: 1859828503}
   - component: {fileID: 1859828505}
   - component: {fileID: 1859828504}
-  - component: {fileID: 1859828506}
   m_Layer: 0
   m_Name: Vertex
   m_TagString: Untagged
@@ -1023,17 +957,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1859828502}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1859828506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1859828502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8814908e163bde478781cb687fdd972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1926093087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,7 +967,6 @@ GameObject:
   - component: {fileID: 1926093088}
   - component: {fileID: 1926093091}
   - component: {fileID: 1926093090}
-  - component: {fileID: 1926093089}
   m_Layer: 0
   m_Name: Vertex
   m_TagString: Untagged
@@ -1065,17 +987,6 @@ Transform:
   m_Father: {fileID: 1654514584}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1926093089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1926093087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8814908e163bde478781cb687fdd972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1926093090
 MeshRenderer:
   m_ObjectHideFlags: 0

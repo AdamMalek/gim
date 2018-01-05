@@ -20,7 +20,7 @@ public class BoardManager : MonoBehaviour {
         var g = new MazeGenerator();
         var boards = new Cell[Levels][,];
         var mazeRoot = new GameObject("Maze");
-        mazeRoot.transform.eulerAngles = new Vector3(0, 45, 0);
+        //mazeRoot.transform.eulerAngles = new Vector3(0, 45, 0);
         lvls = new GameObject[Levels];
         for (int i = 0; i < Levels; i++)
         {
@@ -29,7 +29,7 @@ public class BoardManager : MonoBehaviour {
             lvls[i].transform.SetParent(mazeRoot.transform);
             RenderLevel(lvls[i], i, boards[i]);
         }
-        mazeRoot.transform.eulerAngles = new Vector3(0, 0, 0);
+        //mazeRoot.transform.eulerAngles = new Vector3(0, 0, 0);
     }
 
     public void DisplayLayer(int index)
@@ -40,13 +40,6 @@ public class BoardManager : MonoBehaviour {
         {
             layer.SetActive(!layer.activeSelf);
         }
-        //Enumerable.Range(0, lvls[index].transform.childCount)
-        //        .Select(x => lvls[index].transform.GetChild(x))
-        //        .ToList().ForEach(x =>
-        //        {
-        //            var behaviour = x.GetComponent<BlockBehaviour>();
-        //            behaviour.setVisibility(!behaviour.Visible);
-        //        });
     }
 
     public void ToggleCollision()
