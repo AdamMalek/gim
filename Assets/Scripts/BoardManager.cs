@@ -39,6 +39,13 @@ public class BoardManager : MonoBehaviour {
             lvls[i].transform.SetParent(mazeRoot.transform);
             RenderLevel(lvls[i], i, boards[i]);
         }
+        PlaceElevator(Width-1,Height-1);
+    }
+
+    public void PlaceElevator(int x,int y)
+    {
+        FindObjectsOfType<BlockBehaviour>().Where(b => b.name == "block[" + x + ", " + y + "]").ToList().ForEach(b=> b.setFloorVisibility(false));
+        Instantiate(elevator, new Vector3(x*2, 0, -y*2), Quaternion.identity);
     }
 
     public void DisplayLayer(int index,bool display)
