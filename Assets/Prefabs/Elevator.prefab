@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1244624782908120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: -47}
+  m_LocalPosition: {x: 2, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4531856517633912}
@@ -201,4 +201,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetHeight: 2
   ElevationTime: 1
+  speed: 2.5
+  targetColor: {r: 1, g: 0, b: 0, a: 1}
   running: 0

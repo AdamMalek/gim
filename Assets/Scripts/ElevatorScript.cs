@@ -10,10 +10,12 @@ public class ElevatorScript : MonoBehaviour
 {
     public float TargetHeight = 2;
     public float ElevationTime;
+    public float speed;
+    public Color targetColor;
 
-    [SerializeField]
+    public bool OneWay = true;
+    
     private bool running = false;
-
     private Vector3 initPos;
     private Vector3 targetPos;
     private float curr = 0f;
@@ -42,7 +44,7 @@ public class ElevatorScript : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        canStart = true;
+        canStart = (OneWay && transform.position == initPos) || !OneWay;
     }
 
     public void StartElevator()
@@ -84,6 +86,15 @@ public class ElevatorScript : MonoBehaviour
                 pos = Vector3.Lerp(targetPos, initPos, curr/ElevationTime);
             }
             transform.SetPositionAndRotation(pos,Quaternion.identity);
+        }
+        if (canStart)
+        {
+            var dt = (Mathf.Sin(speed * Time.time) + 1)/2;
+            gameObject.GetComponent<MeshRenderer>().material.color = Color.Lerp(Color.white, targetColor, dt);
+        }
+        else
+        {
+            gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
         }
         if ((up && transform.position.y >= targetPos.y) || (!up && transform.position.y <= initPos.y))
         {

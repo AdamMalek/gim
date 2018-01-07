@@ -13,6 +13,9 @@ public class BlockBehaviour : MonoBehaviour {
     private Material currentFloorMaterial = null;
     private Material floorMaterial = null;
     private Material transparencyMaterial = null;
+
+    private Collider floor;
+
     public void Init(Material transparencyMaterial)
     {
         this.transparencyMaterial = transparencyMaterial;
@@ -21,6 +24,7 @@ public class BlockBehaviour : MonoBehaviour {
         floorMaterial = materials[1];
         setWallsVisibility(wallsVisible);
         setFloorVisibility(floorVisible);
+        floor = GetComponent<Collider>();
     }
     public void setCollisions(bool collision)
     {
@@ -55,6 +59,7 @@ public class BlockBehaviour : MonoBehaviour {
             var mats = GetComponent<MeshRenderer>().materials;
             mats[1] = mat;
             GetComponent<MeshRenderer>().materials = mats;
+            floor.enabled = visible;
         }
     }
 }

@@ -42,7 +42,7 @@ public class FollowBehaviour : MonoBehaviour
         {
             var dir = v - transform.position;
             var ray = new Ray(v, -offset);
-            //Debug.DrawRay(v, -offset, Color.red);
+            Debug.DrawRay(v, -offset, Color.red);
             var res = Physics.RaycastAll(ray,Vector3.Distance(transform.position,v));
             foreach (var hit in res)
             {

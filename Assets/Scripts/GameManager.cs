@@ -22,11 +22,23 @@ public class GameManager : MonoBehaviour
     public void ShowLevel(int lvlIndex)
     {
         BoardManager.DisplayLayer(lvlIndex, true);
-
     }
 
     public void HideLevel(int lvlIndex)
     {
         BoardManager.DisplayLayer(lvlIndex, false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+ {
+            Camera.main.orthographicSize++;
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+ {
+            Camera.main.orthographicSize--;
+        }
+        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 3, 8);
     }
 }
