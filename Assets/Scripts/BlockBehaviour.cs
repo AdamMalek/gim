@@ -5,14 +5,22 @@ using UnityEngine;
 
 public class BlockBehaviour : MonoBehaviour {
 
-    public bool Visible = true;
+    public bool wallsVisible = true;
+    public bool floorVisible = true;
     public bool Collisions = true;
 
-    private Material material = null;
-    private void Start()
+    private Material brickMaterial = null;
+    private Material currentFloorMaterial = null;
+    private Material floorMaterial = null;
+    private Material transparencyMaterial = null;
+    public void Init(Material transparencyMaterial)
     {
-        material = gameObject.GetComponent<MeshRenderer>().material;
-        setVisibility(Visible);
+        this.transparencyMaterial = transparencyMaterial;
+        var materials = gameObject.GetComponent<MeshRenderer>().materials;
+        brickMaterial = materials[0];
+        floorMaterial = materials[1];
+        setWallsVisibility(wallsVisible);
+        setFloorVisibility(floorVisible);
     }
     public void setCollisions(bool collision)
     {
@@ -23,18 +31,30 @@ public class BlockBehaviour : MonoBehaviour {
         Collisions = collision;
     }
     
-    public void setVisibility(bool visible)
+    public void setWallsVisibility(bool visible)
     {
-        if (Visible != visible)
+        if (wallsVisible != visible)
         {
             var alpha = 1f;
             if (!visible)
             {
                 alpha = 0.0f;
             }
-            var c = material.color;
-            material.color = new Color(c.r, c.g, c.b, alpha);
-            Visible = visible;
+            var c = brickMaterial.color;
+            brickMaterial.color = new Color(c.r, c.g, c.b, alpha);
+            wallsVisible = visible;
+        }
+    }
+
+    public void setFloorVisibility(bool visible)
+    {
+        if (floorVisible != visible)
+        {
+            var mat = floorMaterial;
+            if (!visible) mat = transparencyMaterial;
+            var mats = GetComponent<MeshRenderer>().materials;
+            mats[1] = mat;
+            GetComponent<MeshRenderer>().materials = mats;
         }
     }
 }

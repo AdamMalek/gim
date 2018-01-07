@@ -14,7 +14,6 @@ public class FollowBehaviour : MonoBehaviour
     private Vector3 offset;
 
     private List<GameObject> hidden;
-    // Use this for initialization
     void Start()
     {
         var pos = target.position;
@@ -27,7 +26,6 @@ public class FollowBehaviour : MonoBehaviour
         hidden = new List<GameObject>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         var pos = target.position;
@@ -44,7 +42,7 @@ public class FollowBehaviour : MonoBehaviour
         {
             var dir = v - transform.position;
             var ray = new Ray(v, -offset);
-            Debug.DrawRay(v, -offset, Color.red);
+            //Debug.DrawRay(v, -offset, Color.red);
             var res = Physics.RaycastAll(ray,Vector3.Distance(transform.position,v));
             foreach (var hit in res)
             {
@@ -71,11 +69,27 @@ public class FollowBehaviour : MonoBehaviour
 
     void hideObject(GameObject toHide)
     {
-        toHide.GetComponent<BlockBehaviour>().setVisibility(false);
+        BlockBehaviour block = null;
+        if (toHide != null)
+        {
+            block = toHide.GetComponent<BlockBehaviour>();
+        }
+        if (block != null)
+        {
+            block.setWallsVisibility(false);
+        }
     }
 
     void ShowObject(GameObject toShow)
     {
-        toShow.GetComponent<BlockBehaviour>().setVisibility(true);
+        BlockBehaviour block = null;
+        if (toShow != null)
+        {
+            block = toShow.GetComponent<BlockBehaviour>();
+        }
+        if (block != null)
+        {
+            block.setWallsVisibility(true);
+        }
     }
 }

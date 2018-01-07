@@ -4,11 +4,22 @@ using System.Linq;
 using UnityEngine;
 
 public class BoardManager : MonoBehaviour {
-    public GameObject NoWalls;
-    public GameObject singleWall;
-    public GameObject twoWalls;
-    public GameObject corner;
-    public GameObject threeWalls;
+
+    [SerializeField]
+    private GameObject NoWalls;
+    [SerializeField]
+    private GameObject singleWall;
+    [SerializeField]
+    private GameObject twoWalls;
+    [SerializeField]
+    private GameObject corner;
+    [SerializeField]
+    private GameObject threeWalls;
+    [SerializeField]
+    private GameObject elevator;
+
+    [SerializeField]
+    private Material transparencyMaterial;
 
     public int Width;
     public int Height;
@@ -20,7 +31,6 @@ public class BoardManager : MonoBehaviour {
         var g = new MazeGenerator();
         var boards = new Cell[Levels][,];
         var mazeRoot = new GameObject("Maze");
-        //mazeRoot.transform.eulerAngles = new Vector3(0, 45, 0);
         lvls = new GameObject[Levels];
         for (int i = 0; i < Levels; i++)
         {
@@ -29,16 +39,15 @@ public class BoardManager : MonoBehaviour {
             lvls[i].transform.SetParent(mazeRoot.transform);
             RenderLevel(lvls[i], i, boards[i]);
         }
-        //mazeRoot.transform.eulerAngles = new Vector3(0, 0, 0);
     }
 
-    public void DisplayLayer(int index)
+    public void DisplayLayer(int index,bool display)
     {
         if (index < 0 || index >= lvls.Length) return;
         var layer = lvls[index];
         if (layer != null)
         {
-            layer.SetActive(!layer.activeSelf);
+            layer.SetActive(display);
         }
     }
 
@@ -81,6 +90,8 @@ public class BoardManager : MonoBehaviour {
             var inst = Instantiate(obj, pos, Quaternion.identity, root.transform);
             inst.name = "block[" + cell.x + ", " + cell.y + "]";
             inst.transform.Rotate(rot);
+            var behaviour = inst.GetComponent<BlockBehaviour>();
+            behaviour.Init(transparencyMaterial);
         }
     }
 
