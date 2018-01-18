@@ -7,8 +7,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public BoardManager BoardManager;
+    [SerializeField]
+    float TimeLimitInSeconds = 50;
 
+    public BoardManager BoardManager;
     private void Start()
     {
         BoardManager.RenderBoard();
@@ -29,16 +31,22 @@ public class GameManager : MonoBehaviour
         BoardManager.DisplayLayer(lvlIndex, false);
     }
 
+    float currTime = 0;
     private void Update()
     {
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
- {
+        {
             Camera.main.orthographicSize++;
         }
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
- {
+        {
             Camera.main.orthographicSize--;
         }
         Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 3, 8);
+
+        currTime += Time.deltaTime;
+        if (currTime >= TimeLimitInSeconds){
+            FindObjectsOfType<FloorScript>().ToList().ForEach(x=> x.EnableFalling());
+        }
     }
 }

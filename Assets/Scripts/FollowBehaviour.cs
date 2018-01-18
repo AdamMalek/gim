@@ -10,7 +10,6 @@ using UnityEngineInternal;
 public class FollowBehaviour : MonoBehaviour
 {
     public Transform target;
-
     private Vector3 offset;
 
     private List<GameObject> hidden;
@@ -40,7 +39,6 @@ public class FollowBehaviour : MonoBehaviour
         var vertexes = target.GetComponent<VertexComponent>();
         foreach (var v in vertexes.GetVertexArray())
         {
-            var dir = v - transform.position;
             var ray = new Ray(v, -offset);
             Debug.DrawRay(v, -offset, Color.red);
             var res = Physics.RaycastAll(ray,Vector3.Distance(transform.position,v));
@@ -51,7 +49,7 @@ public class FollowBehaviour : MonoBehaviour
                 {
                     h = null == hit.transform.gameObject.GetComponent<VertexComponent>();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     h = false;
                 }
@@ -69,27 +67,27 @@ public class FollowBehaviour : MonoBehaviour
 
     void hideObject(GameObject toHide)
     {
-        BlockBehaviour block = null;
+        WallScript block = null;
         if (toHide != null)
         {
-            block = toHide.GetComponent<BlockBehaviour>();
+            block = toHide.GetComponent<WallScript>();
         }
         if (block != null)
         {
-            block.setWallsVisibility(false);
+            block.Hide();
         }
     }
 
     void ShowObject(GameObject toShow)
     {
-        BlockBehaviour block = null;
+        WallScript block = null;
         if (toShow != null)
         {
-            block = toShow.GetComponent<BlockBehaviour>();
+            block = toShow.GetComponent<WallScript>();
         }
         if (block != null)
         {
-            block.setWallsVisibility(true);
+            block.Show();
         }
     }
 }

@@ -59,6 +59,7 @@ MonoBehaviour:
   elevator: {fileID: 1244624782908120, guid: 3a8ec7071ad429549b4026e49fe7eb2d, type: 2}
   transparencyMaterial: {fileID: 2100000, guid: 00df63f69d5d1ba43b30969dcdc66708,
     type: 2}
+  mazeBlock: {fileID: 1729355567935060, guid: 0973075b0cc03254c982147479354510, type: 2}
   Width: 20
   Height: 20
   Levels: 2

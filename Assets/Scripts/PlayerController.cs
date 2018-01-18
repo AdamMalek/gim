@@ -36,9 +36,9 @@ public class PlayerController : MonoBehaviour {
 
 		Move (inputDir, running);
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			Jump ();
-		}
+		//if (Input.GetKeyDown (KeyCode.Space)) {
+		//	Jump ();
+		//}
 		// animator
 		float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
 		animator.SetFloat ("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
