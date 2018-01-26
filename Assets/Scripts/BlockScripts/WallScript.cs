@@ -14,6 +14,6 @@ public class WallScript : MonoBehaviour
     }
     public void Hide()
     {
-		material.color = new Color(1,1,1,0.0f);
+		  material.color = new Color(1,1,1,0.0f);
     }
 }
