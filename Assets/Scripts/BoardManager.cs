@@ -14,9 +14,9 @@ public class BoardManager : MonoBehaviour
     [SerializeField]
     private Material transparencyMaterial;
 
-    public int Width;
-    public int Height;
-    public int Levels;
+    public static int Width;
+    public static int Height;
+    public static int Levels;
 
     private GameObject[] lvls;
     public void RenderBoard()
