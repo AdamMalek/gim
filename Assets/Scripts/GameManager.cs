@@ -73,9 +73,6 @@ public class GameManager : MonoBehaviour
         sec = TimeLimit.Seconds;
         var px = (playerCharacter.position.x + 0.5f)/boardSize.x;
         var py = -(playerCharacter.position.z - 0.5f)/boardSize.y;
-        Debug.Log("Npos: " + px + ", " + py);
-        Debug.Log("Ppos: " + px * 250 + ", " + py * 250);
-        // playerMarker.gameObject.GetComponent<RectTransform>().localPosition = new Vector2(px * 250, (1-py) *  250);
         playerMarker.gameObject.GetComponent<RectTransform>().localPosition = new Vector2((px-0.5f)*250,(py-0.5f)*250);
         playerMarker.gameObject.GetComponent<RectTransform>().eulerAngles = new Vector3(0,0,-playerCharacter.eulerAngles.y);
     }
