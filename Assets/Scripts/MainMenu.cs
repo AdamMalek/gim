@@ -5,9 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private int levelNum = 1;
+    [SerializeField]
+    private int levelNum = 2;
+
+    [SerializeField]
     private int heightNum = 1;
+
+    [SerializeField]
     private int widthNum = 1;
+
+    [SerializeField]
+    private int timeNum = 1;
 
     void OnGUI()
     {
@@ -19,6 +27,9 @@ public class MainMenu : MonoBehaviour
 
         var width = GUI.TextField(new Rect(Screen.width / 1.6f, Screen.height * 0.4f, Screen.width * 0.04f, Screen.height / 10),
             widthNum.ToString());
+
+        //var time = GUI.Slider(new Rect(Screen.width / 1.6f, Screen.height * 0.4f, Screen.width * 0.04f, Screen.height / 10),
+        //    widthNum.ToString());
 
         if (GUI.Button(new Rect(Screen.width / 2.5f, Screen.height * 0.1f, Screen.width / 5, Screen.height / 10),
             "Start Game"))
