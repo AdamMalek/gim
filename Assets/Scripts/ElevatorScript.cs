@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngineInternal;
 
-public class ElevatorScript : MonoBehaviour
+public class ElevatorScript : FallScript
 {
     public float TargetHeight = 2;
     public float ElevationTime;
@@ -34,7 +34,7 @@ public class ElevatorScript : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        Debug.DrawLine(other.bounds.min,other.bounds.max);
+        if (other.tag != "Player") return;         
         if (canStart && !running && trigger.bounds.Contains(other.bounds.max) && trigger.bounds.Contains(other.bounds.min))
         {
             StartElevator();
@@ -44,6 +44,7 @@ public class ElevatorScript : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
+        if (other.tag != "Player") return;  
         canStart = (OneWay && transform.position == initPos) || !OneWay;
     }
 
@@ -102,5 +103,10 @@ public class ElevatorScript : MonoBehaviour
             up = !up;
             StopElevator();
         }
+    }
+    public override void EnableFalling()
+    {
+        StopElevator();
+        base.EnableFalling();
     }
 }

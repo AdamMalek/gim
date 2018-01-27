@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloorScript : MonoBehaviour
+public class FloorScript : FallScript
 {
     public void Show()
     {
@@ -13,8 +13,8 @@ public class FloorScript : MonoBehaviour
         enabled = false;
     }
 
-    public void EnableFalling()
+    public void Destroy()
     {
-        GetComponent<Rigidbody>().isKinematic = false;
+        Destroy(this.gameObject);
     }
 }
